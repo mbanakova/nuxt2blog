@@ -28,7 +28,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .header-container {
   height: 60px;
 }
@@ -43,7 +43,7 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: black;
+  background-color: $black;
   z-index: 100;
   box-sizing: border-box;
   padding: 0 20px;
@@ -65,10 +65,7 @@ export default {
 
 .navigation-items {
   display: none;
-}
-
-@media (min-width: 768px) {
-  .navigation-items {
+  @media (min-width: 768px) {
     display: block;
   }
 }
@@ -92,6 +89,6 @@ export default {
 .nav-item a:hover,
 .nav-item a:active,
 .nav-item a.nuxt-link-active {
-  color: red;
+  color: $accent;
 }
 </style>

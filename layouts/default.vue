@@ -35,5 +35,8 @@ body {
   overflow-x: hidden;
   font-size: 16px;
   line-height: 20px;
+  min-height: 100vh;
+  background-image: linear-gradient(to top left, $dark, $light);
+  color: $white;
 }
 </style>

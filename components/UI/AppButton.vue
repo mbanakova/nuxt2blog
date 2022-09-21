@@ -19,21 +19,24 @@ export default {
 <style lang="scss" scoped>
 .button {
   font: inherit;
-  background-color: black;
-  color: white;
+  background-color: $bright;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $white;
   padding: 5px;
   cursor: pointer;
-  border: 1px solid black;
+  border: 1px solid $black;
+  transition: $tr;
 }
 
 .button:hover,
 .button:active {
   background-color: rgb(51, 51, 51);
-  border: 1px solid black;
+  border: 1px solid $black;
 }
 
 .inverted {
-  background-color: white;
+  background-color: $white;
   color: black;
   border: 1px solid transparent;
 }
@@ -41,13 +44,13 @@ export default {
 .inverted:hover,
 .inverted:active {
   color: #ccc;
-  background-color: white;
+  background-color: $white;
   border: 1px solid transparent;
 }
 
 .cancel {
-  background-color: red;
-  color: white;
+  background-color: $accent;
+  color: $white;
   border: 1px solid transparent;
 }
 
@@ -55,6 +58,6 @@ export default {
 .cancel:active {
   background-color: salmon;
   border: 1px solid transparent;
-  color: white;
+  color: $white;
 }
 </style>
