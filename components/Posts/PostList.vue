@@ -1,18 +1,13 @@
 <template>
   <section class="featured-posts">
     <PostPreview
+      v-for="post in posts"
+      :key="post.id"
+      :id="post.id"
       :is-admin="isAdmin"
-      id="1"
-      thumbnail="https://www.discoverbritainmag.com/wp-content/uploads/2019/01/tower-of-london-ext.jpeg"
-      title="Tower of London"
-      previewText="The Tower of London has a long, eventful history. Established in 1066 by William the Conqueror "
-    />
-    <PostPreview
-      :is-admin="isAdmin"
-      id="2"
-      thumbnail="https://www.discoverbritainmag.com/wp-content/uploads/2019/01/tower-of-london-ext.jpeg"
-      title="Tower of London"
-      previewText="The Tower of London has a long, eventful history. Established in 1066 by William the Conqueror "
+      :thumbnail="post.thumbnail"
+      :title="post.title"
+      :previewText="post.previewText"
     />
   </section>
 </template>
@@ -29,23 +24,19 @@ export default {
       type: Boolean,
       default: false,
     },
+    posts: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.posts-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.post-list {
-  display: flex;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+.featured-posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
 }
 </style>

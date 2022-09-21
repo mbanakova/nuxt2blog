@@ -1,10 +1,10 @@
 <template>
   <nuxt-link :to="postLink">
     <article class="post-preview">
-      <div
-        class="post-thumbnail"
-        :style="{ backgroundImage: 'url(' + thumbnail + ')' }"
-      ></div>
+      <div class="post-thumbnail">
+        <img :src="thumbnail" />
+      </div>
+
       <div class="post-content">
         <h1>{{ title }}</h1>
         <p>{{ previewText }}</p>
@@ -50,30 +50,35 @@ export default {
 .post-preview {
   border: 1px solid #ccc;
   box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-
-  @media (min-width: 850px) {
-    width: 400px;
-    margin: 10px;
-  }
+  background-color: $white;
 }
 
 a {
   text-decoration: none;
   color: black;
+  display: block;
 }
 
 .post-thumbnail {
-  width: 100%;
-  height: 200px;
   background-position: center;
   background-size: cover;
+
+  & img {
+    width: 100%;
+  }
 }
 
 .post-content {
-  padding: 10px;
   text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0 0 20px;
+}
+
+p {
+  margin: 0;
 }
 
 a:hover .post-content,

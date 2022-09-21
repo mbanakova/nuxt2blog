@@ -1,9 +1,9 @@
 <template>
   <div class="header-container">
     <header class="the-header">
-      <TheSideNavToggle @toggle="$emit('sidenavToggle')" />
+      <TheSideNavToggle @toggle="$emit('sidenavToggle', 'toggle')" />
       <div class="logo">
-        <nuxt-link to="/">WD BLOG</nuxt-link>
+        <nuxt-link to="/">GB news</nuxt-link>
       </div>
       <div class="spacer"></div>
       <div class="navigation-items">
@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 .header-container {
-  height: 60px;
+  min-height: 70px;
 }
 
 .the-header {
@@ -39,14 +39,14 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  min-height: 60px;
+  min-height: 70px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: $black;
   z-index: 100;
   box-sizing: border-box;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 
 .logo {
@@ -56,7 +56,7 @@ export default {
 
 .logo a {
   text-decoration: none;
-  color: white;
+  color: $white;
 }
 
 .spacer {
