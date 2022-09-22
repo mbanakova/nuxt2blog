@@ -2,24 +2,33 @@
   <div
     class="menu-btn"
     role="button"
-    @click="$emit('toggle'), (isOpen = !isOpen)"
-    :class="burgerOpen"
+    @click="toggleBurger"
+    :class="burgerClass"
   >
     <div class="menu-burger"></div>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapMutations } from "vuex";
+
 export default {
   data() {
     return {
       isOpen: false,
     };
   },
+  methods: mapMutations(["toggleBurger"]),
   computed: {
-    burgerOpen() {
-      return { isopen: this.isOpen };
+    ...mapGetters(["burgerStatus"]),
+    burgerClass() {
+      return {
+        isopen: this.burgerStatus,
+      };
     },
+  },
+  created() {
+    this.burgerStatus;
   },
 };
 </script>

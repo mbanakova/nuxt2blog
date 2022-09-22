@@ -2,12 +2,16 @@ import Vuex from 'vuex'
 
 const createStore = () => {
   return new Vuex.Store({
-    store: {
-      loadedPosts: []
+    state: {
+      loadedPosts: [],
+      burgerIsOpen: false,
     },
     mutations: {
       setPosts(state, posts) {
         state.loadedPosts = posts
+      },
+      toggleBurger(state) {
+        state.burgerIsOpen = !state.burgerIsOpen
       }
     },
     actions: {
@@ -38,11 +42,18 @@ const createStore = () => {
       },
       setPosts(vuexContext) {
         vuexContext.commit('setPosts', vuexContext)
+      },
+      toggleBurger(context) {
+        context.commit('toggleBurger', context)
       }
     },
     getters: {
       loadedPosts(state) {
         return state.loadedPosts
+      },
+      burgerStatus(state) {
+        console.log(state.burgerIsOpen);
+        return state.burgerIsOpen
       }
     },
   })

@@ -1,20 +1,18 @@
 <template>
-  <div class="header-container">
-    <header class="the-header">
-      <TheSideNavToggle @toggle="$emit('sidenavToggle', 'toggle')" />
-      <div class="logo">
-        <nuxt-link to="/">GB news</nuxt-link>
-      </div>
-      <div class="spacer"></div>
-      <div class="navigation-items">
-        <ul class="nav-list">
-          <li class="nav-item"><nuxt-link to="/posts">Blog</nuxt-link></li>
-          <li class="nav-item"><nuxt-link to="/about">About</nuxt-link></li>
-          <li class="nav-item"><nuxt-link to="/admin">Admin</nuxt-link></li>
-        </ul>
-      </div>
-    </header>
-  </div>
+  <header class="the-header">
+    <TheSideNavToggle @toggle="$emit('sidenavToggle', 'toggle')" />
+    <div class="logo">
+      <nuxt-link to="/">GB news</nuxt-link>
+    </div>
+    <div class="spacer"></div>
+    <div class="navigation-items">
+      <ul class="nav-list">
+        <li class="nav-item"><nuxt-link to="/posts">Blog</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/about">About</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/admin">Admin</nuxt-link></li>
+      </ul>
+    </div>
+  </header>
 </template>
 
 <script>
@@ -29,22 +27,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header-container {
-  min-height: 70px;
-}
-
 .the-header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   min-height: 70px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: $black;
-  z-index: 100;
   box-sizing: border-box;
   padding: 10px 20px;
 }
