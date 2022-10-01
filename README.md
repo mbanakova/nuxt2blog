@@ -1,4 +1,4 @@
-![Codewars](<https://github.r2v.ch/codewars?user=mbanakova&stroke=rgb(185,47,33)>)
+![Codewars](https://github.r2v.ch/codewars?user=mbanakova)
 
 # newnuxt
 
